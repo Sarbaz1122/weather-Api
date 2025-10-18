@@ -1,42 +1,236 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+🌤️ Basic Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+/* .app{
+  background-color: rgb(184, 192, 70);
+  width: 160%;
+  height: 90vh;
+  
+} */
+
+
+/* 🌤️ Weather Card
+
+ */
+
+/* .dark .container {
+  background: #333;
+  color: white;
+  justify-content: center;
+} */
+
+.Weather-card {
+  
+  width: 350px;
+  margin: 60px auto;
+  margin-left: 500px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 25px;
   text-align: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  font-style: italic;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.Weather-card.dark {
+  background: #0f172a;
+  color: #f1f5f9;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* 🌤️ Title */
+.Weather-card h1 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: #1e3a8a;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.Weather-card.dark h1 {
+  color: #93c5fd;
 }
 
-.card {
-  padding: 2em;
+/* 🌤️ Input */
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  background-color: #f8fafc;
+  transition: 0.3s;
 }
 
-.read-the-docs {
-  color: #888;
+.form-control:focus {
+  border-color: #3b82f6;
+  background-color: #fff;
 }
+
+.Weather-card.dark .form-control {
+  background-color: #1e293b;
+  color: white;
+  border: 1px solid #475569;
+}
+
+/* 🌤️ Button */
+.btn {
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #3b82f6;
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-bottom: 15px;
+}
+
+.btn:hover {
+  background-color: #2563eb;
+}
+
+.Weather-card.dark .btn {
+  background-color: #60a5fa;
+  color: #0f172a;
+}
+
+/* 🌤️ Weather Info */
+.weather-info h2 {
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+.weather-info p {
+  font-size: 0.95rem;
+  color: #475569;
+  margin-top: 4px;
+}
+
+.Weather-card.dark .weather-info p {
+  color: #cbd5e1;
+}
+
+🌤️ Forecast
+ul {
+  list-style: none;
+  margin-top: 15px;
+  padding: 0;
+}
+
+ul li {
+  background: #f1f5f9;
+  margin-bottom: 8px;
+  padding: 8px;
+  border-radius: 8px;
+  color: #1e293b;
+  transition: 0.3s;
+}
+
+ul li:hover {
+  background: #e0e7ff;
+}
+
+.Weather-card.dark ul li {
+  background: #334155;
+  color: #f1f5f9;
+}
+
+/* 🌗 Toggle Switch */
+.toggle-container {
+  margin-top: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #cbd5e1;
+  border-radius: 24px;
+  transition: 0.3s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input:checked + .slider {
+  background-color: #3b82f6;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* 🌤️ Hover Effect */
+.Weather-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+.hide-btn{
+  margin-top: 8px;
+  padding: 6px 12px;
+  border-radius: 10px;
+  background-color: #3b82f6;
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-bottom: 15px;
+}
+/* 🎞️ Background Video Base Style */
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.85;
+  transition: opacity 0.8s ease-in-out;
+}
+
+/* 🌫️ Smooth fade animations */
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+
