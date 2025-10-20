@@ -56,7 +56,7 @@ function App() {
       alignItems: 'center'
     }}
     >
-          <Footer />
+          {/* <Footer /> */}
 
       
     <div className={`Weather-card ${darkMode ? "dark" : ""}`}>
